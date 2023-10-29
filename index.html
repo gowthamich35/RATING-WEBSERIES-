@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="image_list.css">
+  <!-- <link rel="stylesheet" href="image_slider_js.js"> -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      padding-top: 100px;
+      min-height: 100vh; 
+      display: flex;
+      flex-direction: column;
+      background-image:url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JleSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .header {
+      background-color: black;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+    }
+    .nav-buttons a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .nav-buttons a:hover {
+      background-color: #333;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .search-bar {
+      padding: 10px;
+      width: 300px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .search-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .highlight {
+      background-color: rgb(117, 35, 224);
+    }
+    .search-button:hover {
+      background-color: #0056b3;
+    }
+    .write-review-box {
+      background-color:lightgray;
+      padding: 20px;
+      margin-top:20px;
+      margin-left:60px;
+      margin-right:500px;
+     
+    }
+    .write-review-link {
+      text-decoration: none;
+      text-align: center;
+      justify-content: center;
+      color: blue;
+      size: 120%;
+    }
+    .x {
+        margin-top: 50px;
+        margin-left: 200px;
+        margin-right:200px;
+        display: flex;
+        align-items: flex-start;
+    }
+    .x img {
+      border-radius: 20px;
+    }
+    .x p,h1 {
+      margin-left: 50px;
+    }
+
+    .h{
+      margin-left: 40px;
+      font-family: Garamond,serif;
+    }
+    .y{
+      margin-left:55px;
+    }
+    .zoom{
+        transition: transform .2s;
+        cursor: pointer;
+        border-radius: 15px;
+        display: flex;
+        align-items: flex-start;
+        /* box-shadow: 10px 10px 10px #2e2d2d; */
+    }
+    .zoom:hover {
+      -ms-transform: scale(1.055); 
+      -webkit-transform: scale(1.055);
+      transform: scale(1.055); 
+    }
+    .star {
+        margin-left:50px;
+        font-size: 5vh;
+    }
+    .checked{
+        color:rgb(14, 14, 14);
+    }
+    main{
+      padding-top:70px;
+      position: relative;
+      float: right;
+      flex: 1;
+    }
+    .footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo{
+      margin-right: 20px; 
+      margin-left: 200px;
+    }
+    .logo img {
+      border-radius: 5px;
+    }
+
+    .about-section{
+      flex: 1;
+      text-align: center;
+
+    }.contact-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    .contact-section a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      margin: 10px;
+    }
+    .contact-section a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      margin: 10px;
+      transition: color 0.3s; /* Add a smooth color transition effect on hover */
+    }
+
+    .contact-section a:hover {
+      color: #680544;
+    }
+  
+
+  </style>
+</head>
+<body>
+  <div class="header">
+        <div class="zoom">
+          <a href="index.html">
+              <img src="changed_logo.png" alt="Logo" width="100" height="70" style="border-radius: 5px;margin-left: 50px;">
+          </a>
+        </div>
+      <div class="nav-buttons">
+        <a href="index.html">Home</a>
+        <!-- <a href="about.html">About</a> -->
+        <a href="login.html" class="pop">Login</a>
+      </div>
+      <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+          <button onclick="search()" class="search-button">Search</button>
+      </div>
+  </div>
+  <main>
+  <div class="card-list">
+    <a href="TVD.html" class="card-item">
+        <img src="https://img.wattpad.com/91318e8e3070bc4442efa5eaf37bdd72fe178205/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f68347437794a7a587532527153773d3d2d3339383637363839342e313462353637636332663564356366633435333032383931353132322e676966" alt="Card Image">
+        <h3>The Vampire Diaries</h3>
+        <p>2009 ‧ Drama ‧ 8 seasons
+        </p>
+        <p class="checked">★ 4.5</p>
+        <br>
+        <h>Write Review</h>
+        <div class="arrow">
+            <i class="fas fa-arrow-right card-icon"></i>
+        </div>
+    </a>
+    <a href="TO.html" class="card-item">
+        <img src="https://img.wattpad.com/46a857cae433ec1dd3f297b50cefe7a1ec22755f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6377364d4e3838615969476967773d3d2d3339363830343032332e313462343262303863346166303634393833383136313433313632362e676966" alt="Card Image">
+        <h3>The Originals</h3>
+        <p>2013 ‧ Drama ‧ 5 seasons</p>
+        <p class="checked">★ 4.5</p>
+        <br>
+        <h>Write Review</h>
+        <div class="arrow">
+            <i class="fas fa-arrow-right card-icon"></i>
+        </div>
+    </a>
+    <a href="TL.html" class="card-item">
+        <img src="https://media.tenor.com/GkzMSVW8uugAAAAC/legacies.gif" alt="Card Image">
+        <h3>Legacies</h3>
+        <p>2018 ‧ Drama ‧ 4 seasons</p>
+        <p class="checked">★ 3.5</p>
+        <br>
+        <h>Write Review</h>
+        <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+        </div>
+    </a>
+    <a href="PB.html" class="card-item">
+        <img src="https://media.tenor.com/WX7Wj5FLeDYAAAAC/netflix-peaky-blinders.gif" alt="Card Image">
+        <h3>Peaky Blinders</h3>
+        <p>2013 ‧ Drama ‧ 6 seasons</p>
+        <p class="checked">★ 4.5</p>
+        <br>
+        <h>Write Review</h>
+        <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+        </div>
+    </a>
+    <a href="LUCI.html" class="card-item">
+        <img src="https://media.tenor.com/diq5CdxaK7wAAAAC/lucifer-title-sequence.gif" alt="Card Image">
+        <h3>Lucifer</h3>
+        <p class="checked">★ 4.5</p>
+        <p>2016 ‧ Mystery ‧ 6 seasons
+        </p>
+        <br>
+        <h>Write Review</h2>
+        <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+        </div>
+    </a>
+    <a href="DARK.html" class="card-item">
+      <img src="https://66.media.tumblr.com/44f743744268f1c50ecb0ca6253824c3/tumblr_pul1bz9CKD1wviohto1_540.gif" alt="Card Image">
+      <h3>Dark</h3>
+      <p class="checked">★ 4</p>
+      <p>2017 ‧ Mystery ‧ 3 seasons
+      </p>
+      <br>
+      <h>Write Review</h2>
+      <div class="arrow">
+              <i class="fas fa-arrow-right card-icon"></i>
+      </div>
+   </a>
+   <a href="SH.html" class="card-item">
+    <img src="https://i.pinimg.com/originals/00/80/35/0080358ab4ea1c92ea8fb198574b3a51.gif" alt="Card Image">
+    <h3>Sherlock Holmes</h3>
+    <p>2010 ‧ Crime ‧ 4 seasons</p>
+    <p class="checked">★ 4</p>
+    <br>
+    <h>Write Review</h2>
+    <div class="arrow">
+            <i class="fas fa-arrow-right card-icon"></i>
+    </div>
+</a>
+<a href="HANNA.html" class="card-item">
+  <img src="https://media.tenor.com/EAXxY8NpKsIAAAAd/hanna-title.gif" alt="Card Image">
+  <h3>Hanna</h3>
+  <p>2019 ‧ Action ‧ 3 seasons</p>
+  <p class="checked">★ 3.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="REIGN.html" class="card-item">
+  <img src="https://i.gifer.com/KlOW.gif" alt="Card Image">
+  <h3>Reign</h3>
+  <p>2013 ‧ Drama ‧ 4 seasons
+  </p>
+  <p class="checked">★ 4</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="TBT.html" class="card-item">
+  <img src="https://media4.giphy.com/media/aE9jhLzzQporrQRvyk/source.gif" alt="Card Image">
+  <h3>The Bold Type</h3>
+  <p>2017 ‧ Drama ‧ 5 seasons</p>
+  <p class="checked">★ 4</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="TB.html" class="card-item">
+  <img src="https://media0.giphy.com/media/IRTvY3GSQwWBvvO90T/200w.gif?cid=82a1493bjmqmza27llfixesecjiqya0snfmcwdwlh0g48m3e&ep=v1_gifs_related&rid=200w.gif&ct=s" alt="Card Image">
+  <h3>The Boys</h3>
+  <p>2019 ‧ Action fiction ‧ 3 seasons</p>
+  <p class="checked">★ 4</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="ST.html" class="card-item">
+  <img src="https://cdn.dribbble.com/users/527354/screenshots/3879471/paper_things_two.gif" alt="Card Image">
+  <h3>Stranger Things</h3>
+  <p>2016 ‧Suspense. 4 seasons</p>
+  <p class="checked">★ 4.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<!-- <a href="rating.html" class="card-item">
+  <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/money-heist-season-5.jpg" alt="Card Image">
+  <h3>Money Hiest</h3>
+  <p>2017 ‧ Thriller ‧ 5 seasons</p>
+  <p class="checked">★ 4.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="rating.html" class="card-item">
+  <img src="https://pbs.twimg.com/media/E_0kZOfVQAgcNvz.jpg" alt="Card Image">
+   <span class="editor">Editor</span> 
+  <h3>Squid Game</h3>
+  <p>2021 ‧ 1 season
+  </p>
+  <p class="checked">★ 4</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="rating.html" class="card-item">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8qkzR8jmgDmba_jNlorVMr3IohbKjDUfhg&usqp=CAU" alt="Card Image">
+  <!-- <span class="editor">Editor</span> 
+  <h3>Cobra Kai</h3>
+  <p>2018 ‧ Action fiction ‧ 5 seasons
+  </p>
+  <p class="checked">★ 3.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="rating.html" class="card-item">
+  <img src="https://dx35vtwkllhj9.cloudfront.net/netflix/evergreen-resource-site/images/hub/us/tout-13_reasons_why.jpg" alt="Card Image">
+  <!-- <span class="editor">Editor</span> 
+  <h3>13 Reasons Why</h3>
+  <p>2017 ‧ Drama ‧ 4 seasons
+  </p>
+  <p class="checked">★ 3.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a> -->
+<a href="DC.html" class="card-item">
+  <img src="https://media4.giphy.com/media/WsrfMiC3taevLRlHPq/200w.gif?cid=6c09b952gjddr2sz3vax5odog5svbl3bjcuev4w73dy91603&ep=v1_gifs_search&rid=200w.gif&ct=g" alt="Card Image">
+  <!-- <span class="editor">Editor</span> -->
+  <h3>Delhi Crime</h3>
+  <p>2019 ‧ Drama ‧ 2 seasons
+  </p>
+  <p class="checked">★ 4</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="LOKI.html" class="card-item">
+  <img src="https://64.media.tumblr.com/dcc85eb2948bc9bc9d3650f17254ad89/tumblr_px7kwweP6x1spgwzwo1_540.gif" alt="Card Image">
+  <!-- <span class="editor">Editor</span> -->
+  <h3>Loki</h3>
+  <p>2021 ‧ Action ‧ 2 seasons
+  </p>
+  <p class="checked">★ 3.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+<a href="GOT.html" class="card-item">
+  <img src="https://media.tenor.com/xCqRQgta9CAAAAAd/game-of-thrones-logo.gif" alt="Card Image">
+  <!-- <span class="editor">Editor</span> -->
+  <h3>Game of thrones</h3>
+  <p>2011 ‧ Drama ‧ 8 seasons
+  </p>
+  <p class="checked">★ 4.5</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<a href="TFM.html" class="card-item">
+  <img src="https://media.tenor.com/UCpH6_r8Ie8AAAAd/family-man2-shrikant-tiwari.gif" alt="Card Image">
+  <!-- <span class="editor">Editor</span> -->
+  <h3>The Family Man</h3>
+  <p>2019 ‧ Thriller ‧ 2 seasons
+  </p>
+  <p class="checked">★ 4</p>
+  <br>
+  <h>Write Review</h2>
+  <div class="arrow">
+          <i class="fas fa-arrow-right card-icon"></i>
+  </div>
+</a>
+<br/>
+<br/>
+</div>
+</main>
+<div class="footer">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="changed_logo.png" alt="Logo" width="130" height="100" style="border-radius: 5px;">
+    </div>
+    <div class="about-section">
+      <h2>About Us</h2>
+      <p>Welcome to RATE ME, your go-to destination for series reviews and recommendations. Our platform is dedicated to helping TV series enthusiasts discover, discuss, and share their love for television shows.</p>
+    </div>
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <!-- Social Media Icons with Links -->
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:gowthami.ch.35@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

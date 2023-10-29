@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("https://wallpaperaccess.com/full/1605489.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 90%;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            border-radius: 10px;
+            max-width: 800px; 
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .content button {
+            background-color: white;
+            color: black;
+            border-radius: 7px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .content button:hover {
+            background-color: #f0f0f0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>DARK</h1>
+        <h2>2017 ‧ Mystery ‧ 3 seasons
+        </h2>
+        <p>Dark is a German science fiction thriller television series co-created by Baran bo Odar and Jantje Friese.[5][6][7] It ran for three seasons from 2017 to 2020. The story follows characters from the fictional town of Winden, Germany, as they pursue the truth in the aftermath of a child's disappearance. They follow connections between four estranged families to unravel a sinister time travel conspiracy that spans several generations. The series explores the existential implications of time and its effect on human nature and life. It features an ensemble cast..
+        <a href="https://en.wikipedia.org/wiki/Dark_(TV_series)" target="_blank">Click for more</a></p>
+        <a href="rating.html"><button>Write a Review</button></a>
+    </div>
+</body>
+
+</html>

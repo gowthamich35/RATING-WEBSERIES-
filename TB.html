@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("https://wallpapers.com/images/featured/the-boys-1fe3hnl120ch1bc6.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 90%;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            border-radius: 10px;
+            max-width: 800px; 
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .content button {
+            background-color: white;
+            color: black;
+            border-radius: 7px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .content button:hover {
+            background-color: #f0f0f0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>THE BOYS</h1>
+        <h2>2019 ‧ Action fiction ‧ 3 seasons
+        </h2>
+        <p>The Boys is an American satirical superhero television series developed by Eric Kripke for Amazon Prime Video. Based on the comic book of the same name by Garth Ennis and Darick Robertson, it follows the eponymous team of vigilantes as they combat superpowered individuals who abuse their powers. The series features an ensemble cast that includes Karl Urban, Jack Quaid, Antony Starr, Erin Moriarty, Dominique McElligott, Jessie T. Usher, Chace Crawford, Laz Alonso, Tomer Capone, Karen Fukuhara, and Nathan Mitchell.
+        <a href="https://en.wikipedia.org/wiki/The_Boys_(TV_series)" target="_blank">Click for more</a></p>
+        <a href="rating.html"><button>Write a Review</button></a>
+    </div>
+</body>
+
+</html>

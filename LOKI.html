@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("https://image.cnbcfm.com/api/v1/image/105880012-1556558715927lokicropped.jpg?v=1614191072&w=1920&h=1080");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 90%;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            border-radius: 10px;
+            max-width: 800px; 
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .content button {
+            background-color: white;
+            color: black;
+            border-radius: 7px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .content button:hover {
+            background-color: #f0f0f0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>LOKI</h1>
+        <h2>2021 ‧ Action ‧ 2 seasons
+        </h2>
+        <p>Loki is an American television series created by Michael Waldron for the streaming service Disney+, based on Marvel Comics featuring the character of the same name. It is the third television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise. The series takes place after the events of the film Avengers: Endgame (2019), in which an alternate version of Loki created a new timeline. Waldron served as head writer and Kate Herron directed the first season, with Eric Martin and the duo Justin Benson and Aaron Moorhead serving as head writer and leading the directing team for the second season, respectively.
+        <a href="https://en.wikipedia.org/wiki/Loki_(TV_series)" target="_blank">Click for more</a></p>
+        <a href="rating.html"><button>Write a Review</button></a>
+    </div>
+</body>
+
+</html>

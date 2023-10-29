@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("https://www.usatoday.com/gcdn/presto/2021/09/10/USAT/99672280-1c47-4d0f-8ce9-3a2a78188c86-LUCIFER_603_Unit_02220R.jpeg?crop=3599,2025,x0,y180&width=3200&height=1801&format=pjpg&auto=webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 90%;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            border-radius: 10px;
+            max-width: 800px; 
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .content button {
+            background-color: white;
+            color: black;
+            border-radius: 7px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .content button:hover {
+            background-color: #f0f0f0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>LUCIFER</h1>
+        <h2>2016 ‧ Mystery ‧ 6 seasons
+        </h2>
+        <p>Lucifer is an American urban fantasy television series developed by Tom Kapinos that began airing on January 25, 2016, and concluded on September 10, 2021. It revolves around Lucifer Morningstar (Tom Ellis), an alternate version of the DC Comics character of the same name created by Neil Gaiman, Sam Kieth, and Mike Dringenberg. In the series, Lucifer is the devil but abandons Hell to run a nightclub in Los Angeles, subsequently experiencing massive life changes when he becomes a consultant to the Los Angeles Police Department. The supporting cast includes Lauren German, Kevin Alejandro, D. B. Woodside, Lesley-Ann Brandt, Rachael Harris, and Aimee Garcia.
+        <a href="https://en.wikipedia.org/wiki/Lucifer_(TV_series)" target="_blank">Click for more</a></p>
+        <a href="rating.html"><button>Write a Review</button></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("https://i.dawn.com/primary/2023/04/1115430669a0699.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 90%;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            border-radius: 10px;
+            max-width: 800px; 
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .content button {
+            background-color: white;
+            color: black;
+            border-radius: 7px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+
+        .content button:hover {
+            background-color: #f0f0f0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>STRANGER THINGS</h1>
+        <h2>2016 ‧Suspense. 4 seasons
+        </h2>
+        <p>Stranger Things is an American science fiction horror drama television series created by the Duffer Brothers for Netflix. Produced by Monkey Massacre Productions and 21 Laps Entertainment, the first season was released on Netflix on July 15, 2016. The second and third season followed in October 2017 and July 2019 respectively, and the fourth season aired in two parts in May and July 2022. In February 2022, Stranger Things was renewed for a fifth and final season
+        <a href="https://en.wikipedia.org/wiki/Stranger_Things" target="_blank">Click for more</a></p>
+        <a href="rating.html"><button>Write a Review</button></a>
+    </div>
+</body>
+
+</html>
